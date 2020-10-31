@@ -1,0 +1,33 @@
+<div class="container">
+  <div id="table-wrapper">
+    <div id="table-scroll">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Serial No.</th>
+            <th scope="col">Device Name</th>
+            <th scope="col">OS</th>
+            <th scope="col">IMEI NO.</th>
+            <th scope="col">Extra Information</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of data; let i = index ">
+            <th scope="row">{{i+1}}</th>
+            <td>{{x.deviceName}}</td>
+            <td>{{ x.os }}</td>
+            <td>{{x.imei}}</td>
+            <td>{{ x.extraInfo }}</td>
+            <td *ngIf="x.isAvailable">
+              <button class="btn btn-link" (click)="updateDevice(x.isAvailable,x._id)"> Assign </button>
+            </td>
+            <td *ngIf="!x.isAvailable">
+              <button class="btn btn-link" (click)="updateDevice(x.isAvailable,x._id)"> Free Device </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

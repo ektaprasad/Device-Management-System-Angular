@@ -1,0 +1,68 @@
+<form (ngSubmit)="registerUser(username,emailid,pass,cpass)" #formDir="ngForm" [formGroup]="myform">
+    <div class="container">
+        <div>
+            <div class="cross-validation"
+                [class.cross-validation-error]="myform.errors?.identityRevealed && (myform.touched || myform.dirty)">
+                <div class="form-group">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="text" placeholder="Enter Email" #emailid id="email" class="form-control"
+                        formControlName="email">
+                    <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="alert alert-danger">
+                        <div *ngIf="f.email.errors.required">
+                            Email is required.
+                        </div>
+                        <div *ngIf="f.email.errors.pattern">
+                            invalid email
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Username</label>
+                    <input id="name" class="form-control" placeholder="Create a Username" formControlName="name"
+                        required #username>
+                    <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)" class="alert alert-danger">
+                        <div *ngIf="f.name.errors.required">
+                            Username is required.
+                        </div>
+                        <div *ngIf="f.name.errors.minlength">
+                            Username must be at least 4 characters long.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter Password" #pass formControlName="password"
+                        class="form-control" id="password" required>
+                    <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="f.password.errors.required">
+                            Password is required.
+                        </div>
+                        <div *ngIf="f.password.errors.minlength">
+                            Password must be at least 6 characters long.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Repeat Password</label>
+                    <input type="password" placeholder="Confirm Password" #cpass required formControlName="cpassword"
+                        class="form-control" id="cpassword"
+                        [ngClass]="{ 'is-invalid': submitted && f.cpassword.errors }">
+                    <div *ngIf="f.cpassword.invalid && (f.cpassword.dirty || f.cpassword.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback"></div>
+                        <div *ngIf="f.cpassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="f.cpassword.errors.mustMatch">Passwords must match</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-dark btn-lg btn-block" [disabled]="myform.invalid">Sign Up</button>
+                </div>
+                <div class="form-group">
+                    <p>Already a User?
+                        <button class="btn btn-link" (click)="goToLogin()">Login</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,51 @@
+<div class="container">
+    <form (ngSubmit)="addNewDevice(deviceName,os,imei,extraInfo)" #formDir="ngForm" [formGroup]="addDeviceForm">
+        <div class="box">
+            <!-- <div [hidden]="formDir.submitted"> -->
+            <div class="cross-validation"
+                [class.cross-validation-error]="addDeviceForm.errors?.identityRevealed && (addDeviceForm.touched || addDeviceForm.dirty)">
+                <div class="form-group">
+                    <label for="deviceName">Device Name</label>
+                    <input id="deviceName" class="form-control" placeholder="Enter device name"
+                        formControlName="deviceName" required #deviceName>
+                    <div *ngIf="deviceName.invalid && (deviceName.dirty || deviceName.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="deviceName.errors.required">
+                            Device name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="os">Operating System</label>
+                    <input type="text" placeholder="Enter os" #os formControlName="os" class="form-control" id="os"
+                        required>
+                    <div *ngIf="os.invalid && (os.dirty || os.touched)" class="alert alert-danger">
+                        <div *ngIf="os.errors.required">
+                            OS is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="imei">IMEI No.</label>
+                    <input type="text" placeholder="Enter IMEI NO." #imei formControlName="imei" class="form-control"
+                        id="imei" required>
+                    <div *ngIf="imei.invalid && (imei.dirty || imei.touched)" class="alert alert-danger">
+                        <div *ngIf="imei.errors.required">
+                            IMEI no. is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="extraInfo">extraInfo</label>
+                    <textarea placeholder="Enter any information" #extraInfo formControlName="extraInfo"
+                        class="form-control" id="extraInfo" rows="4" cols="28" required></textarea>
+
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-dark btn-lg btn-block" type="submit">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

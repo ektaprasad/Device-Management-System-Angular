@@ -1,0 +1,50 @@
+table, th, td {
+    border: 1px solid rgb(187, 181, 181);
+    border-collapse: collapse;
+    font-size: 15px;
+    background-color: rgb(197, 199, 201);  
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+  th{
+    font-style: italic;
+    font-family: fantasy;
+  }
+  
+form {   
+  margin:0 auto;
+  width:300px;
+   border: 3px solid #f1f1f1;   
+}   
+
+   
+label{
+    color: rgb(17, 12, 12);
+    font-size: 15px;
+    }
+.container {   
+   padding: 25px;   
+   
+}   
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:600px;
+  overflow:auto;  
+  
+}
+#table-wrapper table {
+  width:100%;
+
+}
+#table-wrapper table thead th .text {
+  position:absolute;   
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  
+}

@@ -1,0 +1,13 @@
+<mat-toolbar class="mat-elvation-z#">
+    <span>
+        <mat-icon>eco</mat-icon> DEVICE MANAGEMENT SYSTEM
+    </span>
+    <div class="spacer"></div>
+    <div *ngIf='!isLoggedIn'>
+        <a mat-button routerLink="/login">login</a>
+        <a mat-button routerLink="/signup">signup</a>
+    </div>
+    <div *ngIf='isLoggedIn'>
+        <a mat-button (click)="onLogout()">logout</a>
+    </div>
+</mat-toolbar>

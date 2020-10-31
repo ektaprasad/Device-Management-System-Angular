@@ -1,0 +1,14 @@
+/* .sidenav{
+    background-color: gainsboro;
+} */
+.sidemenu{
+    width: 20%;
+    float: left;
+    height:100vh;
+    background-color: gray;
+}
+
+    a:hover{
+
+        background-color: beige;
+    }

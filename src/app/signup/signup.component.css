@@ -1,0 +1,27 @@
+
+form {   
+    margin:0 auto;
+    padding-top: 5%;
+    width:300px;
+    padding-bottom: 5%;
+      
+ }   
+input[type=text], input[type=password], input[type=email]{   
+     width: 100%;   
+     margin: 8px 0;  
+     padding: 12px 20px;   
+     display: inline-block;   
+     border: 2px solid rgb(222, 238, 222);   
+     box-sizing: border-box;   
+ }  
+ 
+     
+  label{
+      color: rgb(17, 12, 12);
+      font-size: 15px;
+      }
+.container {   
+     padding: 25px;   
+     background-color: rgb(129, 130, 131);  
+ }   
+ 
