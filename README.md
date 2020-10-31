@@ -1,3 +1,7 @@
+It's frontend code for device management system 
+For Backend - https://github.com/ektaprasad/Device-Management-System Built using nodejs
+
+
 # ClientAng
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
